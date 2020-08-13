@@ -39,8 +39,39 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
+player = Player(rooms['outside'])
 
 # Write a loop that:
+while True:
+    current_room = player.current_room
+    print(f"You are now in the {player.current_room.name}")
+    print(player.current_room.description)
+
+    user_input = input("Choose a direction to move in 'n', 's', 'e', 'w': \n")
+
+    if user_input == 'n':
+        if current_room.n_to:
+            player.current_room = current_room.n_to
+        else:
+            print('Please choose a different direction!')
+
+    if user_input == 's':
+        if current_room.s_to is not None:
+            player.current_room = current_room.s_to
+        else:
+            print('Please choose a different direction!')
+
+    if user_input == 'e':
+        if current_room.e_to is not None:
+            player.current_room = current_room.e_to
+        else:
+            print('Please choose a different direction!')
+
+    if user_input == 'w':
+        if current_room.w_to is not None:
+            player.current_room = current_room.w_to
+        else:
+            print('Please choose a different direction!')
 #
 # * Prints the current room name
 # * Prints the current description (the textwrap module might be useful here).
