@@ -34,6 +34,9 @@ rooms['narrow'].w_to = rooms['foyer']
 rooms['narrow'].n_to = rooms['treasure']
 rooms['treasure'].s_to = rooms['narrow']
 
+
+rooms['outside'].items.append
+
 #
 # Main
 #
@@ -54,24 +57,25 @@ while True:
             player.current_room = current_room.n_to
         else:
             print('Please choose a different direction!')
-
+            continue
     if user_input == 's':
         if current_room.s_to is not None:
             player.current_room = current_room.s_to
         else:
             print('Please choose a different direction!')
-
+            continue
     if user_input == 'e':
         if current_room.e_to is not None:
             player.current_room = current_room.e_to
         else:
             print('Please choose a different direction!')
-
+            continue
     if user_input == 'w':
         if current_room.w_to is not None:
             player.current_room = current_room.w_to
         else:
             print('Please choose a different direction!')
+            continue
 #
 # * Prints the current room name
 # * Prints the current description (the textwrap module might be useful here).
