@@ -133,8 +133,20 @@ while True:
                 player.items.append(item)
             else:
                 print(f"{item_name} does not exist here!")
-        elif split_input[0] == 'drop':
-            print('drop item')
+        elif split_input[0].lower() == 'drop':
+            item_name = split_input[1]
+            item = player.get_inventory_item(item_name)
+            if item:
+                item.on_drop()
+
+                player.remove_inventory_item(item)
+
+                current_room.items.append(item)
+            else:
+                print(f"{item_name} is not in your inventory!")
+        else:
+            print("I did not recognize that command!")
+            continue
 
 #
 # * Prints the current room name
