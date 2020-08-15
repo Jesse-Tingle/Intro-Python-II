@@ -40,7 +40,10 @@ room['outside'].items.append(
     Item("Sword", "A bladed melee weapon. Use this to kill enemies on your quest!"))
 room['narrow'].items.append(Item(
     'Shield', 'A piece of personal armour held in the hand. Use it to protect yourself against attacts from the enemy!'))
-
+room['overlook'].items.append(
+    Item('Armor', "Protective clothing to where to shield you against attacks."))
+room['overlook'].items.append(
+    Item('Torch', 'A light source to help guide your way in the dark.'))
 #
 # Main
 #
